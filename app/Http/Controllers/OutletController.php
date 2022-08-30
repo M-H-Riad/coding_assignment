@@ -134,4 +134,24 @@ class OutletController extends Controller
             'message' => $message
         ]);
     }
+
+    function getOutletLocation($id)
+    {
+        $outlet = Outlet::find($id);
+        $result = $this->getLocationDetails($outlet->latitude, $outlet->longitude);
+        // return $result;
+        return response()->json([
+            'status' => $result->status,
+            'data' => $result
+        ]);
+    }
+
+    private function getLocationDetails($latitude, $longitude)
+    {
+        $url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' . trim($latitude) . ',' . trim($longitude) . '&sensor=false';
+        $json = @file_get_contents($url);
+        $data = json_decode($json);
+
+        return $data;
+    }
 }

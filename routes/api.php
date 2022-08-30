@@ -35,5 +35,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::get('/outlet/{id}', 'show');
         Route::post('/outlet/update/{id}', 'update');
         Route::delete('/outlet/delete/{id}', 'destroy');
+        // Location routes........
+        Route::get('/outlet-location/{outlet_id}', 'getOutletLocation');
     });
 });
