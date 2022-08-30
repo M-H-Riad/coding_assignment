@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 29, 2022 at 01:55 PM
+-- Generation Time: Aug 30, 2022 at 08:57 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -82,7 +82,7 @@ CREATE TABLE `outlets` (
 --
 
 INSERT INTO `outlets` (`id`, `name`, `phone`, `latitude`, `longitude`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'First Outlet', '12346546565', '454654654', '2572727527', 'uploads/1661760759.jpg', '2022-08-29 08:12:39', '2022-08-29 08:12:39');
+(1, 'First Outlet', '12346546565', '13.384276', '16.424534', 'uploads/1661760759.jpg', '2022-08-29 08:12:39', '2022-08-29 08:12:39');
 
 -- --------------------------------------------------------
 
@@ -120,7 +120,8 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `expires_at`, `created_at`, `updated_at`) VALUES
-(1, 'App\\Models\\User', 1, 'myToken', 'cd25e267286172699a9fcf3c8e9d6dcd3394c844b429d847446721db15adf4b3', '[\"*\"]', '2022-08-29 08:20:47', NULL, '2022-08-29 07:55:48', '2022-08-29 08:20:47');
+(1, 'App\\Models\\User', 1, 'myToken', 'cd25e267286172699a9fcf3c8e9d6dcd3394c844b429d847446721db15adf4b3', '[\"*\"]', '2022-08-29 08:20:47', NULL, '2022-08-29 07:55:48', '2022-08-29 08:20:47'),
+(2, 'App\\Models\\User', 1, 'myToken', '0b95ec5b70cb7ccf2a53df8811d203c3a48929d34c09e33ddcdf56761e98ff26', '[\"*\"]', '2022-08-30 06:46:39', NULL, '2022-08-30 06:23:39', '2022-08-30 06:46:39');
 
 -- --------------------------------------------------------
 
@@ -216,7 +217,7 @@ ALTER TABLE `outlets`
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
